@@ -55,7 +55,7 @@ function setup()
 	slider_releaseLevel.position(10, 170);
 	slider_releaseLevel.style('height,', '80px');
 
-	slider_delayTime = createSlider(0, 4, 1, 0);
+	slider_delayTime = createSlider(0, 1, 1, 0);
 	slider_delayTime.position(10, 210);
 	slider_delayTime.style('height,', '80px');
 
@@ -142,13 +142,13 @@ function draw()
 	text("R level", slider_attackLevel.x * 2 + slider_attackLevel.width, slider_releaseLevel.y +10);
 
 	attackTime = slider_A.value();
-	text("A", slider_A.x * 2 + slider_A.width, slider_A.y + 10);
+	text("A: ", slider_A.x * 2 + slider_A.width, slider_A.y + 10);
 	decayTime = slider_D.value();
-	text("D", slider_A.x * 2 + slider_D.width, slider_D.y + 10);
+	text("D: ", slider_A.x * 2 + slider_D.width, slider_D.y + 10);
 	susPercent = slider_S.value();
-	text("S", slider_A.x * 2 + slider_S.width, slider_S.y + 10);
+	text("S: ", slider_A.x * 2 + slider_S.width, slider_S.y + 10);
 	releaseTime = slider_R.value();
-	text("R", slider_A.x * 2 + slider_R.width, slider_R.y + 10);
+	text("R: ", slider_A.x * 2 + slider_R.width, slider_R.y + 10);
 
 	env.setADSR(attackTime, decayTime, susPercent, releaseTime);
 	env.setRange(attackLevel, releaseLevel);
@@ -156,11 +156,11 @@ function draw()
 	//-----------------------------------------------------------------------------
 	// change delay:
 	delayTime = slider_delayTime.value();
-	text("Delay Time", slider_delayTime.x * 2 + slider_delayTime.width, slider_delayTime.y + 10);
+	text("Delay Time: "+delayTime, slider_delayTime.x * 2 + slider_delayTime.width, slider_delayTime.y + 10);
 	delayFeedback = slider_delayFeedback.value();
-	text("Delay Feedback", slider_delayFeedback.x * 2 + slider_delayFeedback.width, slider_delayFeedback.y + 10);
+	text("Delay Feedback: "+delayFeedback, slider_delayFeedback.x * 2 + slider_delayFeedback.width, slider_delayFeedback.y + 10);
 	delayFilterCutoff = slider_delayFilterCutoff.value();
-	text("Delay CutOff", slider_delayFilterCutoff.x * 2 + slider_delayFilterCutoff.width, slider_delayFilterCutoff.y + 10);
+	text("Delay CutOff: "+delayFilterCutoff, slider_delayFilterCutoff.x * 2 + slider_delayFilterCutoff.width, slider_delayFilterCutoff.y + 10);
 
 	delay.delayTime(delayTime);
 	delay.feedback(delayFeedback);
